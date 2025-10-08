@@ -99,9 +99,7 @@ def build_UI():
     results = find_similar_images(query_vec, csv_path, method, top_k)
     cols = st.columns(5)
     for idx, (img_path, dist) in enumerate(results):
-        # img = cv2.imread(img_path)
-        img_name = os.path.basename(img_path)
-        img = cv2.imread(os.path.join(img_folder, img_name))
+        img = cv2.imread(img_path)
         if img is None:
             continue
         img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
