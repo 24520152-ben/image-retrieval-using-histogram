@@ -1,4 +1,5 @@
 ỨNG DỤNG TÌM KIẾM ẢNH TƯƠNG TỰ BẰNG PHƯƠNG PHÁP SO KHỚP HISTOGRAM
+CS406 - HỒ PHẠM QUỐC BẢO - 24520152
 
 DÙNG TRỰC TIẾP TRÊN STREAMLIT CLOUD: https://image-retrieval-using-histogram-ben.streamlit.app/
 
