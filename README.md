@@ -2,6 +2,8 @@
 
 CS406 - HỒ PHẠM QUỐC BẢO - 24520152
 
+GITHUB REPO: https://github.com/24520152-ben/image-retrieval-using-histogram.git
+
 DÙNG TRỰC TIẾP TRÊN STREAMLIT CLOUD: https://image-retrieval-using-histogram-ben.streamlit.app/
 
 TÍNH NĂNG CHÍNH
