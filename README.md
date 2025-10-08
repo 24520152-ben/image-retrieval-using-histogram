@@ -10,8 +10,8 @@ TÍNH NĂNG CHÍNH
   + Euclidean Distance
   + Manhattan Distance
   + Cosine Similarity
-- HIỆN THỊ CÁC ẢNH GIỐNG VỚI ẢNH TRUY VẤN
+- HIỂN THỊ CÁC ẢNH GIỐNG VỚI ẢNH TRUY VẤN
 
 CÁCH CHẠY LOCAL
-- cài thư viện cần thiết: pip install -r requirements.txt
-- chạy ứng dụng: streamlit run app.py
+- Cài thư viện cần thiết: pip install -r requirements.txt
+- Chạy ứng dụng: streamlit run app.py
