@@ -79,7 +79,8 @@ def build_UI():
 
     # Show query image
     selected_img = cv2.imread(selected_img_path)
-    st.sidebar.image(selected_img, caption='Query image', width='stretch')
+    selected_img_rgb = cv2.cvtColor(selected_img, cv2.COLOR_BGR2RGB)
+    st.sidebar.image(selected_img_rgb, caption='Query image', width='stretch')
 
     # Histogram and similarity metrics settings
     color_space = st.sidebar.radio('Color space', ['RGB', 'HSV'])
