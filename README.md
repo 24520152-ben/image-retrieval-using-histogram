@@ -3,15 +3,15 @@
 DÙNG TRỰC TIẾP TRÊN STREAMLIT CLOUD: https://image-retrieval-using-histogram-ben.streamlit.app/
 
 TÍNH NĂNG CHÍNH
-- TÍNH HISTOGRAM ẢNH THEO:
-  + RGB (3 KÊNH MÀU)
-  + HSV (KÊNH HUE VÀ SATURATION)
+- TÍNH HISTOGRAM ẢNH THEO
+  + RGB (3 kênh màu)
+  + HSV (kênh Hue và Saturation)
 - SO KHỚP ẢNH BẰNG
-  + EUCLIDEAN DISTANCE
-  + MANHATTAN DISTANCE
-  + COSINE SIMILARITY
+  + Euclidean Distance
+  + Manhattan Distance
+  + Cosine Similarity
 - HIỆN THỊ CÁC ẢNH GIỐNG VỚI ẢNH TRUY VẤN
 
 CÁCH CHẠY LOCAL
-- CÀI THƯ VIỆN CẦN THIẾT: pip install -r requirements.txt
-- CHẠY ỨNG DỤNG: streamlit run app.py
+- cài thư viện cần thiết: pip install -r requirements.txt
+- chạy ứng dụng: streamlit run app.py
