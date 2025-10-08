@@ -62,6 +62,7 @@ def build_UI():
     BASE_DIR = os.path.join(os.path.dirname(__file__), 'dataset')
     TEST_DIR = os.path.join(BASE_DIR, 'seg_test')
     VEC_DIR = os.path.join(BASE_DIR, 'seg_vec')
+    IMG_DIR = os.path.join(BASE_DIR, 'seg_img')
 
     # Image folder selection
     categories = os.listdir(TEST_DIR)
@@ -69,6 +70,7 @@ def build_UI():
 
     test_folder = os.path.join(TEST_DIR, category)
     vec_folder = os.path.join(VEC_DIR, category)
+    img_folder = os.path.join(IMG_DIR, category)
 
     # Image selection
     test_images = [img for img in os.listdir(test_folder) if img.lower().endswith(('.jpg', '.jpeg', '.png'))]
@@ -98,7 +100,8 @@ def build_UI():
     cols = st.columns(5)
     for idx, (img_path, dist) in enumerate(results):
         # img = cv2.imread(img_path)
-        img = cv2.imread(os.path.join(os.path.dirname(__file__), img_path))
+        img_name = os.path.basename(img_path)
+        img = cv2.imread(os.path.join(img_folder, img_name))
         if img is None:
             continue
         img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
