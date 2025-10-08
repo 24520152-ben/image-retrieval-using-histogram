@@ -107,7 +107,7 @@ def build_UI():
         img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         col = cols[idx % 5]
         with col:
-            st.image(img_rgb, caption=f'{img_name} {method} = {dist:.4f}', width='content')
+            st.image(img_rgb, caption=f'{img_name} {method} = {dist:.4f}', width='stretch')
 
 if __name__ == '__main__':
     build_UI()
