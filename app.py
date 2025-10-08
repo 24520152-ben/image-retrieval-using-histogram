@@ -78,34 +78,35 @@ def build_UI():
     selected_img_path = os.path.join(test_folder, selected_img_name)
 
     # Show query image
-    st.sidebar.image(selected_img_path, caption='Query image', width='stretch')
+    selected_img = cv2.imread(selected_img_path)
+    st.sidebar.image(selected_img, caption='Query image', width='stretch')
 
-    # Histogram and similarity metrics settings
-    color_space = st.sidebar.radio('Color space', ['RGB', 'HSV'])
-    method = st.sidebar.selectbox('Similarity method', ['Euclidean Distance', 'Manhattan Distance', 'Cosine Similarity'])
-    top_k = st.sidebar.slider('Number of similar images', 1, 20, 10)
+    # # Histogram and similarity metrics settings
+    # color_space = st.sidebar.radio('Color space', ['RGB', 'HSV'])
+    # method = st.sidebar.selectbox('Similarity method', ['Euclidean Distance', 'Manhattan Distance', 'Cosine Similarity'])
+    # top_k = st.sidebar.slider('Number of similar images', 1, 20, 10)
 
-    # Compute histogram for query image
-    query_img = cv2.imread(selected_img_path)
-    if color_space == 'RGB':
-        query_vec = compute_rgb_hist(query_img)
-        csv_path = os.path.join(vec_folder, 'seg_rgb.csv')
-    else:
-        query_vec = compute_hsv_hist(query_img)
-        csv_path = os.path.join(vec_folder, 'seg_hsv.csv')
+    # # Compute histogram for query image
+    # query_img = cv2.imread(selected_img_path)
+    # if color_space == 'RGB':
+    #     query_vec = compute_rgb_hist(query_img)
+    #     csv_path = os.path.join(vec_folder, 'seg_rgb.csv')
+    # else:
+    #     query_vec = compute_hsv_hist(query_img)
+    #     csv_path = os.path.join(vec_folder, 'seg_hsv.csv')
 
-    # Search similar images
-    st.subheader(f'Top {top_k} similar images in {color_space} color space using {method} metric')
-    results = find_similar_images(query_vec, csv_path, method, top_k)
-    cols = st.columns(5)
-    for idx, (img_path, dist) in enumerate(results):
-        img = cv2.imread(os.path.join(os.path.dirname(__file__), img_path))
-        if img is None:
-            continue
-        img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        col = cols[idx % 5]
-        with col:
-            st.image(img_rgb, caption=f'{os.path.basename(img_path)} {method} = {dist:.4f}', width='content')
+    # # Search similar images
+    # st.subheader(f'Top {top_k} similar images in {color_space} color space using {method} metric')
+    # results = find_similar_images(query_vec, csv_path, method, top_k)
+    # cols = st.columns(5)
+    # for idx, (img_path, dist) in enumerate(results):
+    #     img = cv2.imread(os.path.join(os.path.dirname(__file__), img_path))
+    #     if img is None:
+    #         continue
+    #     img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    #     col = cols[idx % 5]
+    #     with col:
+    #         st.image(img_rgb, caption=f'{os.path.basename(img_path)} {method} = {dist:.4f}', width='content')
 
 if __name__ == '__main__':
     build_UI()

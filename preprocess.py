@@ -54,9 +54,9 @@ def build_hist_csv(folder_path, preprocessed_folder_path, output_rgb='seg_rgb.cs
 
         # rows_rgb.append([path] + rgb_vec.tolist())
         # rows_hsv.append([path] + hsv_vec.tolist())
-        rel_path = os.path.relpath(path, start=os.path.dirname(__file__))
-        rows_rgb.append([rel_path] + rgb_vec.tolist())
-        rows_hsv.append([rel_path] + hsv_vec.tolist())
+        # rel_path = os.path.relpath(path, start=os.path.dirname(__file__))
+        rows_rgb.append([os.path.basename(path)] + rgb_vec.tolist())
+        rows_hsv.append([os.path.basename(path)] + hsv_vec.tolist())
 
     df_rgb = pd.DataFrame(rows_rgb)
     df_hsv = pd.DataFrame(rows_hsv)
