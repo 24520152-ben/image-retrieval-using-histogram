@@ -12,6 +12,15 @@ TÍNH NĂNG CHÍNH
   + Cosine Similarity
 - HIỂN THỊ CÁC ẢNH GIỐNG VỚI ẢNH TRUY VẤN
 
+CẤU TRÚC THƯ MỤC
+- dataset
+  + seg_img 
+  + seg_test
+  + seg_vec
+- app.py
+- preprocess.py
+- requirements.txt
+
 CÁCH CHẠY LOCAL
 - Cài thư viện cần thiết: pip install -r requirements.txt
 - Chạy ứng dụng: streamlit run app.py
